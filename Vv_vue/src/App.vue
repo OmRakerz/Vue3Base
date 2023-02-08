@@ -3,36 +3,43 @@ export default {
   name: "App",
   data() {
     return {
-      text: "Текст текст Текст",
+      cost: 45,
+      amount: 5,
     };
   },
 
-  methods: {
-    changetext1: function () {
-      this.text = "xxx";
+  computed: {
+    price: function () {
+      return this.cost * this.amount;
     },
-    changetext2: function () {
-      this.text = "yyy";
+  },
+
+  methods: {
+    //Задание №2
+    newprice: function () {
+      this.cost = this.cost + 15;
     },
   },
 };
 </script>
 
 <template>
-  <h1>Упражнение №14</h1>
+  <h1>Упражнение №15</h1>
   <br />
 
   <div>
-    <!-- Задание №1 -->
+    <!-- Задание №1  -->
     <h2>Задание №1</h2>
-    <p>{{ text }}</p>
-
-    <!-- Задание №2 и №3 -->
-    <h2>Задание №2 и №3</h2>
-    <p>Для изменения значения текста из первого задания нажмите на кнопку:</p>
     <br />
-    <button @click="changetext1">xxx</button>
-    <button @click="changetext2">yyy</button>
+    <p>Цена продукта: {{ cost }}</p>
+    <p>Количество продуктов: {{ amount }}</p>
+    <p>Полная стоимость продуктов: {{ price }}</p>
+
+    <!-- Задание №2-->
+    <h2>Задание №2</h2>
+    <br />
+    <p>Нажмите на кнопку, для изменения значения цены на 15</p>
+    <button @click="newprice">Обновление цены</button>
   </div>
   <main>
     <TheWelcome />
