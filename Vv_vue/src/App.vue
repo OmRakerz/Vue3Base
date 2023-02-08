@@ -2,44 +2,36 @@
 export default {
   name: "App",
   data() {
-    return {
-      cost: 45,
-      amount: 5,
-    };
-  },
-
-  computed: {
-    price: function () {
-      return this.cost * this.amount;
-    },
+    return {};
   },
 
   methods: {
     //Задание №2
-    newprice: function () {
-      this.cost = this.cost + 15;
+    oneclick: function () {
+      alert("Первое и единственное нажатие на кнопку");
     },
   },
 };
 </script>
 
 <template>
-  <h1>Упражнение №15</h1>
+  <h1>Упражнение №16</h1>
   <br />
 
   <div>
-    <!-- Задание №1  -->
     <h2>Задание №1</h2>
-    <br />
-    <p>Цена продукта: {{ cost }}</p>
-    <p>Количество продуктов: {{ amount }}</p>
-    <p>Полная стоимость продуктов: {{ price }}</p>
+    <a
+      class="link"
+      href="https://code.mu/ru/javascript/framework/vue/book/prime/basis/events-modifiers/"
+      onclick="event.preventDefault()"
+      >Клик по этой ссылке не приводит к переходу по ней</a
+    >
 
-    <!-- Задание №2-->
+    <br />
     <h2>Задание №2</h2>
     <br />
-    <p>Нажмите на кнопку, для изменения значения цены на 15</p>
-    <button @click="newprice">Обновление цены</button>
+    <p>Сработает только одно нажатие по кнопке</p>
+    <button @click.once="oneclick()">Button</button>
   </div>
   <main>
     <TheWelcome />
@@ -81,6 +73,6 @@ p {
 /* ---------------- */
 a {
   font-family: sans-serif;
-  font-size: 25px;
+  font-size: 20px;
 }
 </style>
