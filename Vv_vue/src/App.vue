@@ -15,7 +15,7 @@ export default {
 </script>
 
 <template>
-  <h1>Упражнение №9</h1>
+  <h1>Упражнение №10</h1>
   <br />
 
   <div>
