@@ -2,34 +2,23 @@
 export default {
   name: "App",
   data() {
-    return {};
-  },
-
-  methods: {
-    show: function () {
-      var data = new Date();
-      alert(data.toDateString());
-    },
+    return {
+      num1: 1,
+      num2: 2,
+    };
   },
 };
 </script>
 
 <template>
-  <h1>Упражнение №10</h1>
+  <h1>Упражнение №11</h1>
   <br />
 
   <div>
     <!-- Задание №1  -->
     <h2>Задание №1</h2>
-    {{ show() }}
-    <p>Кликни</p>
-    <button @click="show">Текущая дата</button>
-
     <br />
-    <!-- Задание №2  -->
-    <h2>Задание №2</h2>
-    <p>Наведи</p>
-    <button @mouseenter="show">Текущая дата</button>
+    <p>Сумма чисел {{ num1 }} и {{ num2 }} = {{ this.num1 + this.num2 }}</p>
   </div>
   <main>
     <TheWelcome />
@@ -57,7 +46,7 @@ h1 {
 }
 
 h2 {
-  margin-top: 25px;
+  margin-top: 30px;
   font-size: 35px;
   color: #008080;
 }
