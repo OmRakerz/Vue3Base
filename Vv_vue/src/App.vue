@@ -22,6 +22,14 @@ export default {
     <!-- Задание №1  -->
     <h2>Задание №1</h2>
     {{ show() }}
+    <p>Кликни</p>
+    <button @click="show">Текущая дата</button>
+
+    <br />
+    <!-- Задание №2  -->
+    <h2>Задание №2</h2>
+    <p>Наведи</p>
+    <button @mouseenter="show">Текущая дата</button>
   </div>
   <main>
     <TheWelcome />
@@ -55,7 +63,7 @@ h2 {
 }
 
 p {
-  font-size: 25px;
+  font-size: 20px;
   display: block;
   width: 50%;
   color: white;
