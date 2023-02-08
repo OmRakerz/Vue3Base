@@ -3,22 +3,43 @@ export default {
   name: "App",
   data() {
     return {
-      num1: 1,
-      num2: 2,
+      date: 3,
     };
+  },
+
+  methods: {
+    // Задание №1
+    getDate: function () {
+      let week = [
+        "Понедельник",
+        "Вторник",
+        "Среда",
+        "Четверг",
+        "Пятница",
+        "Суббота",
+        "Воскресенье",
+      ];
+      return week[this.date - 1];
+    },
+
+    // Задание №2
+    showDay: function () {
+      let day = this.getDate(this.date);
+      alert(day);
+    },
   },
 };
 </script>
 
 <template>
-  <h1>Упражнение №11</h1>
+  <h1>Упражнение №12</h1>
   <br />
 
   <div>
-    <!-- Задание №1  -->
-    <h2>Задание №1</h2>
+    <!-- Задание №1 и №2  -->
+    <h2>Задание №1 и №2</h2>
+    {{ showDay() }}
     <br />
-    <p>Сумма чисел {{ num1 }} и {{ num2 }} = {{ this.num1 + this.num2 }}</p>
   </div>
   <main>
     <TheWelcome />
