@@ -3,42 +3,36 @@ export default {
   name: "App",
   data() {
     return {
-      visible: true,
+      hidden: false,
     };
   },
 
   methods: {
     //Задание №1
-    button1: function () {
-      this.visible = true;
-    },
-    button2: function () {
-      this.visible = false;
+    button: function () {
+      this.hidden = true;
     },
   },
 };
 </script>
 
 <template>
-  <h1>Упражнение №17</h1>
+  <h1>Упражнение №18</h1>
   <br />
 
   <div>
     <!-- Задание №1  -->
     <h2>Задание №1</h2>
-    <p v-if="visible">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor sequi
-      excepturi dolores harum dignissimos cum.
-    </p>
-
-    <p v-if="!visible">
+    <p v-if="!hidden">
       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur, illo!
       Cupiditate numquam, obcaecati adipisci, assumenda porro officiis
       doloremque architecto temporibus ratione veritatis fugit animi. Quae!
     </p>
     <br />
-    <button @click="button1()">Показать первый абзац</button>
-    <button @click="button2()">Показать второй абзац</button>
+    <p>Значение hidden равно {{ hidden }}</p>
+    <br />
+
+    <button @click="button()">Сменить на true</button>
   </div>
   <main>
     <TheWelcome />
