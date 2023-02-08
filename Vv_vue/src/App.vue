@@ -2,44 +2,34 @@
 export default {
   name: "App",
   data() {
-    return {
-      date: 3,
-    };
+    return {};
   },
 
   methods: {
-    // Задание №1
-    getDate: function () {
-      let week = [
-        "Понедельник",
-        "Вторник",
-        "Среда",
-        "Четверг",
-        "Пятница",
-        "Суббота",
-        "Воскресенье",
-      ];
-      return week[this.date - 1];
-    },
-
-    // Задание №2
-    showDay: function () {
-      let day = this.getDate(this.date);
-      alert(day);
+    // Задание №1 и №2
+    numsquare: function (num) {
+      alert(num ** 2);
     },
   },
 };
 </script>
 
 <template>
-  <h1>Упражнение №12</h1>
+  <h1>Упражнение №13</h1>
   <br />
 
   <div>
-    <!-- Задание №1 и №2  -->
-    <h2>Задание №1 и №2</h2>
-    {{ showDay() }}
+    <!-- Задание №1  -->
+    <h2>Задание №1</h2>
     <br />
+    <p>Нажми на кнопку, чтобы получить число 2 в квадрате</p>
+    <button @click="numsquare(2)">2^2</button>
+
+    <!-- Задание №2  -->
+    <h2>Задание №2</h2>
+    <br />
+    <p>Нажми на кнопку, чтобы получить число 3 в квадрате</p>
+    <button @click="numsquare(3)">3^2</button>
   </div>
   <main>
     <TheWelcome />
