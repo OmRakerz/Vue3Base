@@ -2,23 +2,26 @@
 export default {
   name: "App",
   data() {
-    return {
-      //Задание №1
-      obj: { x: 1, y: 2, z: 3 },
-    };
+    return {};
+  },
+
+  methods: {
+    show: function () {
+      var data = new Date();
+      alert(data.toDateString());
+    },
   },
 };
 </script>
 
 <template>
-  <h1>Упражнение №7</h1>
+  <h1>Упражнение №9</h1>
   <br />
 
   <div>
     <!-- Задание №1  -->
     <h2>Задание №1</h2>
-    <br />
-    <p>Сумма элементов объекта obj = {{ obj.x + obj.y + obj.z }}</p>
+    {{ show() }}
   </div>
   <main>
     <TheWelcome />
