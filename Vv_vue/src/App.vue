@@ -2,34 +2,37 @@
 export default {
   name: "App",
   data() {
-    return {};
+    return {
+      text: "Текст текст Текст",
+    };
   },
 
   methods: {
-    // Задание №1 и №2
-    numsquare: function (num) {
-      alert(num ** 2);
+    changetext1: function () {
+      this.text = "xxx";
+    },
+    changetext2: function () {
+      this.text = "yyy";
     },
   },
 };
 </script>
 
 <template>
-  <h1>Упражнение №13</h1>
+  <h1>Упражнение №14</h1>
   <br />
 
   <div>
-    <!-- Задание №1  -->
+    <!-- Задание №1 -->
     <h2>Задание №1</h2>
-    <br />
-    <p>Нажми на кнопку, чтобы получить число 2 в квадрате</p>
-    <button @click="numsquare(2)">2^2</button>
+    <p>{{ text }}</p>
 
-    <!-- Задание №2  -->
-    <h2>Задание №2</h2>
+    <!-- Задание №2 и №3 -->
+    <h2>Задание №2 и №3</h2>
+    <p>Для изменения значения текста из первого задания нажмите на кнопку:</p>
     <br />
-    <p>Нажми на кнопку, чтобы получить число 3 в квадрате</p>
-    <button @click="numsquare(3)">3^2</button>
+    <button @click="changetext1">xxx</button>
+    <button @click="changetext2">yyy</button>
   </div>
   <main>
     <TheWelcome />
