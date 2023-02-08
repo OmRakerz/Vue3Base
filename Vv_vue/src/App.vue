@@ -1,15 +1,27 @@
 <script>
 export default {
   name: "App",
+  data() {
+    return {
+      name: "Valera",
+      surn: "Vladychin",
+    };
+  },
 };
 </script>
 
 <template>
-  <h1>Задание №1</h1>
-  <p>Hello, World!</p>
-  <br />
-  <p>I'm Valera</p>
+  <h1>Задание №4</h1>
 
+  <br />
+
+  <div class="div1">
+    {{ name }}
+  </div>
+  <br />
+  <div class="div2">
+    {{ surn }}
+  </div>
   <main>
     <TheWelcome />
   </main>
@@ -42,4 +54,10 @@ p {
   color: white;
 }
 /* ---------------- */
+.div1,
+.div2 {
+  font-family: sans-serif;
+  color: white;
+  font-size: 25px;
+}
 </style>
