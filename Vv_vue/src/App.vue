@@ -3,24 +3,20 @@ export default {
   name: "App",
   data() {
     return {
-      name: "Valera",
-      surn: "Vladychin",
+      text: "page",
+      href: "page.html",
     };
   },
 };
 </script>
 
 <template>
-  <h1>Задание №4</h1>
+  <h1>Задание №5</h1>
 
   <br />
 
-  <div class="div1">
-    {{ name }}
-  </div>
-  <br />
-  <div class="div2">
-    {{ surn }}
+  <div>
+    <a :href="href">{{ text }}</a>
   </div>
   <main>
     <TheWelcome />
@@ -54,10 +50,8 @@ p {
   color: white;
 }
 /* ---------------- */
-.div1,
-.div2 {
+a {
   font-family: sans-serif;
-  color: white;
   font-size: 25px;
 }
 </style>
