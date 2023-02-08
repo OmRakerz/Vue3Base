@@ -2,36 +2,43 @@
 export default {
   name: "App",
   data() {
-    return {};
+    return {
+      visible: true,
+    };
   },
 
   methods: {
-    //Задание №2
-    oneclick: function () {
-      alert("Первое и единственное нажатие на кнопку");
+    //Задание №1
+    button1: function () {
+      this.visible = true;
+    },
+    button2: function () {
+      this.visible = false;
     },
   },
 };
 </script>
 
 <template>
-  <h1>Упражнение №16</h1>
+  <h1>Упражнение №17</h1>
   <br />
 
   <div>
+    <!-- Задание №1  -->
     <h2>Задание №1</h2>
-    <a
-      class="link"
-      href="https://code.mu/ru/javascript/framework/vue/book/prime/basis/events-modifiers/"
-      onclick="event.preventDefault()"
-      >Клик по этой ссылке не приводит к переходу по ней</a
-    >
+    <p v-if="visible">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor sequi
+      excepturi dolores harum dignissimos cum.
+    </p>
 
+    <p v-if="!visible">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur, illo!
+      Cupiditate numquam, obcaecati adipisci, assumenda porro officiis
+      doloremque architecto temporibus ratione veritatis fugit animi. Quae!
+    </p>
     <br />
-    <h2>Задание №2</h2>
-    <br />
-    <p>Сработает только одно нажатие по кнопке</p>
-    <button @click.once="oneclick()">Button</button>
+    <button @click="button1()">Показать первый абзац</button>
+    <button @click="button2()">Показать второй абзац</button>
   </div>
   <main>
     <TheWelcome />
