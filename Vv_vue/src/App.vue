@@ -6,7 +6,9 @@ export default {
 
 <template>
   <h1>Задание №1</h1>
-  <div>Hello, World!</div>
+  <p>Hello, World!</p>
+  <br />
+  <p>I'm Valera</p>
 
   <main>
     <TheWelcome />
@@ -30,14 +32,14 @@ h1 {
   text-align: center;
   margin-top: 50px;
   font-size: 50px;
-  color: white;
+  color: #4682b4;
 }
 
 p {
   font-size: 25px;
   display: block;
   width: 50%;
-  color: gray;
+  color: white;
 }
 /* ---------------- */
 </style>
