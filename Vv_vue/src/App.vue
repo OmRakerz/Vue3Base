@@ -27,40 +27,35 @@ export default {
 </script>
 
 <template>
-  <h1>Упражнение №20</h1>
+  <h1>Упражнение №21</h1>
   <br />
 
   <!-- Задание №1 -->
   <h2>Задание №1</h2>
   <br />
 
-  <p v-if="visible1">
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque, ipsam
-    exercitationem! Voluptates unde atque molestias similique eos laboriosam,
-    minus laborum harum culpa quis voluptatum cupiditate.
+  <p>
+    {{ visible1 ? "Скрыть первый абзац" : "Показать первый абзац" }}
   </p>
-  <button @click="toggle1">Скрыть/показать абзац 1</button>
+  <button @click="toggle1">Кнопка 1</button>
 
   <br />
   <br />
   <br />
 
-  <p v-if="visible2">
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, dolorem
-    animi quasi iure non asperiores eos. Nesciunt modi rem eveniet!
+  <p>
+    {{ visible2 ? "Скрыть второй абзац" : "Показать второй абзац" }}
   </p>
-  <button @click="toggle2">Скрыть/показать абзац 2</button>
+  <button @click="toggle2">Кнопка 2</button>
 
   <br />
   <br />
   <br />
 
-  <p v-if="visible3">
-    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum minima nam
-    unde, commodi repudiandae repellendus placeat eveniet facere nesciunt
-    consequuntur veniam blanditiis possimus quaerat maxime.
+  <p>
+    {{ visible3 ? "Скрыть третий абзац" : "Показать третий абзац" }}
   </p>
-  <button @click="toggle3">Скрыть/показать абзац 3</button>
+  <button @click="toggle3">Кнопка 3</button>
   <main>
     <TheWelcome />
   </main>
