@@ -3,30 +3,31 @@ export default {
   name: "App",
   data() {
     return {
-      visible1: false,
+      visible1: true,
       visible2: true,
+      visible3: true,
     };
   },
 
   methods: {
     //Задание №1
-    show1: function () {
-      this.visible1 = true;
+    toggle1: function () {
+      this.visible1 = !this.visible1;
     },
 
-    //Задание №2 и 3
-    hide2: function () {
-      this.visible2 = false;
+    toggle2: function () {
+      this.visible2 = !this.visible2;
     },
-    show2: function () {
-      this.visible2 = true;
+
+    toggle3: function () {
+      this.visible3 = !this.visible3;
     },
   },
 };
 </script>
 
 <template>
-  <h1>Упражнение №19</h1>
+  <h1>Упражнение №20</h1>
   <br />
 
   <!-- Задание №1 -->
@@ -38,37 +39,28 @@ export default {
     exercitationem! Voluptates unde atque molestias similique eos laboriosam,
     minus laborum harum culpa quis voluptatum cupiditate.
   </p>
-  <button class="link" @click="show1">Показать текст</button>
+  <button @click="toggle1">Скрыть/показать абзац 1</button>
 
   <br />
   <br />
-
-  <!-- Задание №2 -->
-  <h2>Задание №2</h2>
   <br />
 
   <p v-if="visible2">
     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, dolorem
     animi quasi iure non asperiores eos. Nesciunt modi rem eveniet!
   </p>
-  <button class="link" @click="show2">Показать текст</button>
-  <button class="link" @click="hide2">Скрыть текст</button>
+  <button @click="toggle2">Скрыть/показать абзац 2</button>
 
   <br />
   <br />
-
-  <!-- Задание №3 -->
-  <h2>Задание №3</h2>
   <br />
 
-  <p v-if="visible2">
+  <p v-if="visible3">
     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum minima nam
     unde, commodi repudiandae repellendus placeat eveniet facere nesciunt
     consequuntur veniam blanditiis possimus quaerat maxime.
   </p>
-  <button class="link" @click="show2" v-if="!visible2">Показать текст</button>
-  <button class="link" @click="hide2" v-if="visible2">Скрыть текст</button>
-
+  <button @click="toggle3">Скрыть/показать абзац 3</button>
   <main>
     <TheWelcome />
   </main>
