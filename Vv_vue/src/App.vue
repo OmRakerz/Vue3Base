@@ -3,37 +3,72 @@ export default {
   name: "App",
   data() {
     return {
-      hidden: false,
+      visible1: false,
+      visible2: true,
     };
   },
 
   methods: {
     //Задание №1
-    button: function () {
-      this.hidden = true;
+    show1: function () {
+      this.visible1 = true;
+    },
+
+    //Задание №2 и 3
+    hide2: function () {
+      this.visible2 = false;
+    },
+    show2: function () {
+      this.visible2 = true;
     },
   },
 };
 </script>
 
 <template>
-  <h1>Упражнение №18</h1>
+  <h1>Упражнение №19</h1>
   <br />
 
-  <div>
-    <!-- Задание №1  -->
-    <h2>Задание №1</h2>
-    <p v-if="!hidden">
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur, illo!
-      Cupiditate numquam, obcaecati adipisci, assumenda porro officiis
-      doloremque architecto temporibus ratione veritatis fugit animi. Quae!
-    </p>
-    <br />
-    <p>Значение hidden равно {{ hidden }}</p>
-    <br />
+  <!-- Задание №1 -->
+  <h2>Задание №1</h2>
+  <br />
 
-    <button @click="button()">Сменить на true</button>
-  </div>
+  <p v-if="visible1">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque, ipsam
+    exercitationem! Voluptates unde atque molestias similique eos laboriosam,
+    minus laborum harum culpa quis voluptatum cupiditate.
+  </p>
+  <button class="link" @click="show1">Показать текст</button>
+
+  <br />
+  <br />
+
+  <!-- Задание №2 -->
+  <h2>Задание №2</h2>
+  <br />
+
+  <p v-if="visible2">
+    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente, dolorem
+    animi quasi iure non asperiores eos. Nesciunt modi rem eveniet!
+  </p>
+  <button class="link" @click="show2">Показать текст</button>
+  <button class="link" @click="hide2">Скрыть текст</button>
+
+  <br />
+  <br />
+
+  <!-- Задание №3 -->
+  <h2>Задание №3</h2>
+  <br />
+
+  <p v-if="visible2">
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum minima nam
+    unde, commodi repudiandae repellendus placeat eveniet facere nesciunt
+    consequuntur veniam blanditiis possimus quaerat maxime.
+  </p>
+  <button class="link" @click="show2" v-if="!visible2">Показать текст</button>
+  <button class="link" @click="hide2" v-if="visible2">Скрыть текст</button>
+
   <main>
     <TheWelcome />
   </main>
@@ -68,7 +103,7 @@ h2 {
 p {
   font-size: 20px;
   display: block;
-  width: 50%;
+  width: 70%;
   color: white;
 }
 /* ---------------- */
