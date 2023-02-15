@@ -3,59 +3,32 @@ export default {
   name: "App",
   data() {
     return {
-      visible1: true,
-      visible2: true,
-      visible3: true,
+      isAdmin: true,
     };
   },
 
   methods: {
     //Задание №1
-    toggle1: function () {
-      this.visible1 = !this.visible1;
-    },
-
-    toggle2: function () {
-      this.visible2 = !this.visible2;
-    },
-
-    toggle3: function () {
-      this.visible3 = !this.visible3;
+    change: function () {
+      this.isAdmin = !this.isAdmin;
     },
   },
 };
 </script>
 
 <template>
-  <h1>Упражнение №21</h1>
+  <h1>Упражнение №22</h1>
   <br />
 
   <!-- Задание №1 -->
   <h2>Задание №1</h2>
   <br />
 
-  <p>
-    {{ visible1 ? "Скрыть первый абзац" : "Показать первый абзац" }}
-  </p>
-  <button @click="toggle1">Кнопка 1</button>
+  <p v-if="isAdmin">Текст1. Виден, когда isAdmin: true</p>
+  <p v-else>Текст2. Виден, когда isAdmin: false</p>
 
   <br />
-  <br />
-  <br />
-
-  <p>
-    {{ visible2 ? "Скрыть второй абзац" : "Показать второй абзац" }}
-  </p>
-  <button @click="toggle2">Кнопка 2</button>
-
-  <br />
-  <br />
-  <br />
-
-  <p>
-    {{ visible3 ? "Скрыть третий абзац" : "Показать третий абзац" }}
-  </p>
-  <button @click="toggle3">Кнопка 3</button>
+  <button @click="change()">Изменить значение</button>
   <main>
     <TheWelcome />
   </main>
