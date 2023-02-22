@@ -4,6 +4,7 @@ export default {
   data() {
     return {
       //Задание №1
+      items: [1, -2, 3, -4, 5],
     };
   },
 
@@ -14,14 +15,16 @@ export default {
 </script>
 
 <template>
-  <h1>Упражнение №31</h1>
+  <h1>Упражнение №33</h1>
   <br />
 
   <!-- Задание №1 -->
   <h2>Задание №1</h2>
   <br />
 
-  <p v-for="num in 30">{{ num }}</p>
+  <template v-for="elem in items">
+    <p v-if="elem > 0">{{ elem }}</p>
+  </template>
 
   <main>
     <TheWelcome />
