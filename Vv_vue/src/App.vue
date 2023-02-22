@@ -4,7 +4,10 @@ export default {
   data() {
     return {
       //Задание №1
-      cssClasses: "task37",
+      obj: {
+        done: true,
+        selected: false,
+      },
     };
   },
 
@@ -15,14 +18,14 @@ export default {
 </script>
 
 <template>
-  <h1>Упражнение №37</h1>
+  <h1>Упражнение №38</h1>
   <br />
 
-  <h2>Атрибут class в фреймворке</h2>
+  <h2>Объект с CSS классами</h2>
   <br />
 
   <!-- Задание №1 -->
-  <p :class="cssClasses">
+  <p :class="obj">
     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste, saepe qui
     beatae culpa quas architecto sunt cum? Sed inventore praesentium minus.
     Saepe consequuntur cumque, aperiam labore eaque maiores rem harum?
@@ -76,12 +79,19 @@ a {
   font-size: 20px;
 }
 
-.task37 {
+.done {
   color: whitesmoke;
   font-size: 20px;
   display: block;
   width: 70%;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin-left: 20px;
+}
+
+.selected {
+  font-size: 30px;
+  display: block;
+  width: 70%;
+  color: #00fa9a;
 }
 </style>
