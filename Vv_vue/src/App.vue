@@ -3,27 +3,34 @@ export default {
   name: "App",
   data() {
     return {
-      age: 25,
+      visible: true,
     };
   },
 
   methods: {
     //Задание №1
+    toggle: function () {
+      this.visible = !this.visible;
+    },
   },
 };
 </script>
 
 <template>
-  <h1>Упражнение №23</h1>
+  <h1>Упражнение №25</h1>
   <br />
 
   <!-- Задание №1 -->
   <h2>Задание №1</h2>
-  <br />
 
-  <p v-if="age < 18">Подросток</p>
-  <p v-else-if="age >= 19 && age <= 25">Молодой человек</p>
-  <p v-else>Мужчина</p>
+  <template v-if="visible">
+    <p>Абзац 1. Текст. Текст. Текст.</p>
+    <p>Абзац 2. Текст. Текст. Текст.</p>
+    <p>Абзац 3. Текст. Текст. Текст.</p>
+  </template>
+  <br />
+  <button @click="toggle">{{ visible ? "Скрыть" : "Показать" }}</button>
+
   <main>
     <TheWelcome />
   </main>
