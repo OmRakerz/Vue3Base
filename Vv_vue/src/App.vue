@@ -3,30 +3,36 @@ export default {
   name: "App",
   data() {
     return {
-      visible: true,
+      //Задание №1, №2, №3
+      items: [1, 2, 3, 4, 5],
     };
   },
 
   methods: {
     //Задание №1
-    toggle: function () {
-      this.visible = !this.visible;
-    },
   },
 };
 </script>
 
 <template>
-  <h1>Упражнение №26</h1>
+  <h1>Упражнение №27</h1>
   <br />
 
   <!-- Задание №1 -->
   <h2>Задание №1</h2>
-
-  <p v-show="visible">Абзац 1. Текст. Текст. Текст.</p>
   <br />
+  <div class="p" v-for="item in items">{{ item }}</div>
 
-  <button @click="toggle">{{ visible ? "Скрыть" : "Показать" }}</button>
+  <!-- Задание №2 -->
+  <h2>Задание №2</h2>
+  <br />
+  <div class="p" v-for="item in items">{{ item ** 2 }}</div>
+
+  <!-- Задание №3 -->
+  <h2>Задание №3</h2>
+  <ul class="ul" v-for="item in items">
+    <li>{{ item }}</li>
+  </ul>
 
   <main>
     <TheWelcome />
@@ -59,11 +65,16 @@ h2 {
   color: #008080;
 }
 
-p {
+.p {
   font-size: 25px;
   display: block;
   width: 70%;
   color: white;
+}
+
+.ul {
+  color: #00bfff;
+  font-size: 20px;
 }
 /* ---------------- */
 a {
