@@ -15,7 +15,7 @@ export default {
 </script>
 
 <template>
-  <h1>Упражнение №36</h1>
+  <h1>Упражнение №37</h1>
   <br />
 
   <h2>Атрибут class в фреймворке</h2>
