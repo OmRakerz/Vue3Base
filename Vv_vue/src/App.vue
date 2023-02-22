@@ -4,7 +4,20 @@ export default {
   data() {
     return {
       //Задание №1
-      items: [1, -2, 3, -4, 5],
+      products: [
+        {
+          id: 1,
+          name: "product1",
+        },
+        {
+          id: 2,
+          name: "product2",
+        },
+        {
+          id: 3,
+          name: "product3",
+        },
+      ],
     };
   },
 
@@ -15,16 +28,16 @@ export default {
 </script>
 
 <template>
-  <h1>Упражнение №33</h1>
+  <h1>Упражнение №34</h1>
   <br />
 
   <!-- Задание №1 -->
   <h2>Задание №1</h2>
   <br />
 
-  <template v-for="elem in items">
-    <p v-if="elem > 0">{{ elem }}</p>
-  </template>
+  <ul class="ul" v-for="product in products" :key="product.id">
+    <li>{{ product.name }}</li>
+  </ul>
 
   <main>
     <TheWelcome />
