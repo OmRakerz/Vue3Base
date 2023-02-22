@@ -4,7 +4,11 @@ export default {
   data() {
     return {
       //Задание №1
-      arr: ["x", "y", "z"],
+      obj: {
+        user1: "100$",
+        user2: "200$",
+        user3: "300$",
+      },
     };
   },
 
@@ -15,15 +19,39 @@ export default {
 </script>
 
 <template>
-  <h1>Упражнение №28</h1>
+  <h1>Упражнение №29</h1>
   <br />
 
   <!-- Задание №1 -->
   <h2>Задание №1</h2>
   <br />
 
-  <ul class="ul" v-for="(elem, key) in arr">
-    <li>{{ key }} {{ elem }}</li>
+  <ul class="ul" v-for="elem in obj">
+    <li>{{ elem }}</li>
+  </ul>
+
+  <!-- Задание №2 -->
+  <h2>Задание №2</h2>
+  <br />
+
+  <ul class="ul" v-for="(key, elem) in obj">
+    <li>{{ elem }} - {{ key }}</li>
+  </ul>
+
+  <!-- Задание №3 -->
+  <h2>Задание №3</h2>
+  <br />
+
+  <ul class="ul" v-for="(key, elem, index) in obj">
+    <li>{{ elem }} - {{ key }} - {{ index }}</li>
+  </ul>
+
+  <!-- Задание №4 -->
+  <h2>Задание №4</h2>
+  <br />
+
+  <ul class="ul" v-for="(key, elem, index) in obj">
+    <li>{{ elem }} - {{ key }} - {{ index + 1 }}</li>
   </ul>
 
   <main>
