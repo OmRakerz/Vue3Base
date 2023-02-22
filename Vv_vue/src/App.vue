@@ -3,32 +3,31 @@ export default {
   name: "App",
   data() {
     return {
-      isAdmin: true,
+      day: "Среда",
     };
   },
 
   methods: {
     //Задание №1
-    change: function () {
-      this.isAdmin = !this.isAdmin;
-    },
   },
 };
 </script>
 
 <template>
-  <h1>Упражнение №22</h1>
+  <h1>Упражнение №23</h1>
   <br />
 
   <!-- Задание №1 -->
   <h2>Задание №1</h2>
   <br />
 
-  <p v-if="isAdmin">Текст1. Виден, когда isAdmin: true</p>
-  <p v-else>Текст2. Виден, когда isAdmin: false</p>
-
-  <br />
-  <button @click="change()">Изменить значение</button>
+  <p v-if="day === 'Понедельник'">Понедельник</p>
+  <p v-if="day === 'Вторник'">Вторник</p>
+  <p v-if="day === 'Среда'">Среда</p>
+  <p v-if="day === 'Четверг'">Четверг</p>
+  <p v-if="day === 'Пятница'">Пятница</p>
+  <p v-if="day === 'Суббота'">Суббота</p>
+  <p v-if="day === 'Воскресенье'">Воскресенье</p>
   <main>
     <TheWelcome />
   </main>
@@ -61,7 +60,7 @@ h2 {
 }
 
 p {
-  font-size: 20px;
+  font-size: 25px;
   display: block;
   width: 70%;
   color: white;
