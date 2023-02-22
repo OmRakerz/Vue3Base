@@ -4,67 +4,28 @@ export default {
   data() {
     return {
       //Задание №1, №2, №3, №4, №5, №6
-      arr: ["a", "b", "c", "d", "e", "f"],
     };
   },
 
   methods: {
     // Задание №1
-    add: function () {
-      this.arr.push("g");
-    },
-    // Задание №2
-    delf: function () {
-      this.arr.shift();
-    },
-    // Задание №3
-    dell: function () {
-      this.arr.pop();
-    },
-    // Задание №4
-    splice: function () {
-      this.arr.splice(2, 1);
-    },
-    // Задание №5
-    sort: function () {
-      this.arr.sort();
-    },
-    // Задание №6
-    reverse: function () {
-      this.arr.reverse();
-    },
   },
 };
 </script>
 
 <template>
-  <h1>Упражнение №35</h1>
+  <h1>Упражнение №36</h1>
   <br />
 
   <!-- Задание №1 -->
-  <h2>Задания №1, №2, №3, №4, №5, №6</h2>
+  <h2>Стилизация компонента в фреймворке Vue</h2>
   <br />
 
-  <!-- Задание №1 -->
-  <ul class="ul">
-    <li v-for="elem in arr">{{ elem }}</li>
-  </ul>
-  <button @click="add">add</button>
-
-  <!-- Задание №2 -->
-  <button @click="delf">del first</button>
-
-  <!-- Задание №3 -->
-  <button @click="dell">del last</button>
-
-  <!-- Задание №4 -->
-  <button @click="splice">del penult</button>
-
-  <!-- Задание №5 -->
-  <button @click="sort">sort</button>
-
-  <!-- Задание №6 -->
-  <button @click="reverse">reverse order</button>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde hic vel
+    voluptatum reprehenderit. Accusamus nobis atque omnis, maiores earum dolor
+    voluptatum unde numquam ut libero, ducimus commodi, nam provident nihil!
+  </p>
 
   <main>
     <TheWelcome />
