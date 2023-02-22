@@ -9,33 +9,60 @@ export default {
   },
 
   methods: {
-    //Задание №1
+    // Задание №1
+    hrefs: [
+      { href: "1.html", text: "text1" },
+      { href: "2.html", text: "text2" },
+      { href: "3.html", text: "text3" },
+    ],
+
+    // Задание №2
+    products: [
+      {
+        name: "product1",
+        price: 100,
+        quantity: 5,
+      },
+      {
+        name: "product2",
+        price: 200,
+        quantity: 4,
+      },
+      {
+        name: "product3",
+        price: 300,
+        quantity: 3,
+      },
+    ],
   },
 };
 </script>
 
 <template>
-  <h1>Упражнение №29</h1>
+  <h1>Упражнение №31</h1>
   <br />
 
   <!-- Задание №1 -->
   <h2>Задание №1</h2>
   <br />
 
-  <div v-for="elem in items">
-    <p>{{ elem }}</p>
-    <p class="divider"></p>
-  </div>
+  <ul class="ul">
+    <li v-for="elem in hrefs">
+      <a href="{{ elem.href }}">{{ elem.text }}</a>
+    </li>
+  </ul>
 
   <!-- Задание №2 -->
   <h2>Задание №2</h2>
   <br />
 
-  <ul class="ul" v-for="elem in items">
-    <li>{{ elem }}</li>
-    <li class="divider"></li>
-  </ul>
-
+  <table>
+    <tr v-for="product in products">
+      <td>{{ product.name }}</td>
+      <td>{{ product.price }}</td>
+      <td>{{ product.quantity }}</td>
+    </tr>
+  </table>
   <main>
     <TheWelcome />
   </main>
