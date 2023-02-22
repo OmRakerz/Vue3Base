@@ -3,37 +3,12 @@ export default {
   name: "App",
   data() {
     return {
-      //Задание №1, №2
-      items: [1, 2, 3],
+      //Задание №1
     };
   },
 
   methods: {
     // Задание №1
-    hrefs: [
-      { href: "1.html", text: "text1" },
-      { href: "2.html", text: "text2" },
-      { href: "3.html", text: "text3" },
-    ],
-
-    // Задание №2
-    products: [
-      {
-        name: "product1",
-        price: 100,
-        quantity: 5,
-      },
-      {
-        name: "product2",
-        price: 200,
-        quantity: 4,
-      },
-      {
-        name: "product3",
-        price: 300,
-        quantity: 3,
-      },
-    ],
   },
 };
 </script>
@@ -46,23 +21,8 @@ export default {
   <h2>Задание №1</h2>
   <br />
 
-  <ul class="ul">
-    <li v-for="elem in hrefs">
-      <a href="{{ elem.href }}">{{ elem.text }}</a>
-    </li>
-  </ul>
+  <p v-for="num in 30">{{ num }}</p>
 
-  <!-- Задание №2 -->
-  <h2>Задание №2</h2>
-  <br />
-
-  <table>
-    <tr v-for="product in products">
-      <td>{{ product.name }}</td>
-      <td>{{ product.price }}</td>
-      <td>{{ product.quantity }}</td>
-    </tr>
-  </table>
   <main>
     <TheWelcome />
   </main>
