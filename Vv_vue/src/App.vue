@@ -3,7 +3,8 @@ export default {
   name: "App",
   data() {
     return {
-      //Задание №1, №2, №3, №4, №5, №6
+      //Задание №1
+      cssClasses: "task37",
     };
   },
 
@@ -17,14 +18,14 @@ export default {
   <h1>Упражнение №36</h1>
   <br />
 
-  <!-- Задание №1 -->
-  <h2>Стилизация компонента в фреймворке Vue</h2>
+  <h2>Атрибут class в фреймворке</h2>
   <br />
 
-  <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde hic vel
-    voluptatum reprehenderit. Accusamus nobis atque omnis, maiores earum dolor
-    voluptatum unde numquam ut libero, ducimus commodi, nam provident nihil!
+  <!-- Задание №1 -->
+  <p :class="cssClasses">
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste, saepe qui
+    beatae culpa quas architecto sunt cum? Sed inventore praesentium minus.
+    Saepe consequuntur cumque, aperiam labore eaque maiores rem harum?
   </p>
 
   <main>
@@ -58,12 +59,12 @@ h2 {
   color: #008080;
 }
 
-p {
+/* p {
   font-size: 25px;
   display: block;
   width: 70%;
   color: white;
-}
+} */
 
 .ul {
   color: #00bfff;
@@ -73,5 +74,14 @@ p {
 a {
   font-family: sans-serif;
   font-size: 20px;
+}
+
+.task37 {
+  color: whitesmoke;
+  font-size: 20px;
+  display: block;
+  width: 70%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-left: 20px;
 }
 </style>
