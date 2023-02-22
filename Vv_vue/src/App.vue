@@ -3,8 +3,8 @@ export default {
   name: "App",
   data() {
     return {
-      //Задание №1, №2, №3
-      items: [1, 2, 3, 4, 5],
+      //Задание №1
+      arr: ["x", "y", "z"],
     };
   },
 
@@ -15,23 +15,15 @@ export default {
 </script>
 
 <template>
-  <h1>Упражнение №27</h1>
+  <h1>Упражнение №28</h1>
   <br />
 
   <!-- Задание №1 -->
   <h2>Задание №1</h2>
   <br />
-  <div class="p" v-for="item in items">{{ item }}</div>
 
-  <!-- Задание №2 -->
-  <h2>Задание №2</h2>
-  <br />
-  <div class="p" v-for="item in items">{{ item ** 2 }}</div>
-
-  <!-- Задание №3 -->
-  <h2>Задание №3</h2>
-  <ul class="ul" v-for="item in items">
-    <li>{{ item }}</li>
+  <ul class="ul" v-for="(elem, key) in arr">
+    <li>{{ key }} {{ elem }}</li>
   </ul>
 
   <main>
