@@ -4,53 +4,29 @@ export default {
   data() {
     return {
       //Задание №1
-      obj: {
-        hidden: true,
-      },
     };
   },
 
   methods: {
-    // Задание №2
-    show: function () {
-      this.obj.hidden = false;
-    },
-    // Задание №3
-    hide: function () {
-      this.obj.hidden = true;
-    },
-    // Задание №4
-    toggle: function () {
-      this.obj.hidden = !this.obj.hidden;
-    },
+    // Задание №1
   },
 };
 </script>
 
 <template>
-  <h1>Упражнение №39</h1>
+  <h1>Упражнение №40</h1>
   <br />
 
   <!-- Задание №1 -->
   <h2>Задание №1</h2>
+  <br />
 
-  <p :class="obj">
+  <p :class="{ active: true, valid: false }">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit asperiores
     dolores iure, rerum vero possimus pariatur provident, voluptatem earum,
     neque hic! Cum magni sit perferendis assumenda ipsum. Quos, doloribus
     distinctio!
   </p>
-  <br />
-
-  <h2>Задание №2</h2>
-  <button @click="show">Показать</button>
-
-  <h2>Задание №3</h2>
-  <button @click="hide">Скрыть</button>
-  <br />
-
-  <h2>Задание №4</h2>
-  <button @click="toggle">{{ obj.hidden ? "Показать" : "Скрыть" }}</button>
 
   <main>
     <TheWelcome />
@@ -102,7 +78,19 @@ a {
 /* ---------------- */
 
 /* Задание №1 */
-p.hidden {
-  display: none;
+.active {
+  font-size: 25px;
+  display: block;
+  width: 70%;
+  color: #00fa9a;
+}
+
+.valid {
+  color: whitesmoke;
+  font-size: 20px;
+  display: block;
+  width: 70%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-left: 20px;
 }
 </style>
