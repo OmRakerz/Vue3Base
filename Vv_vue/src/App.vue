@@ -3,8 +3,8 @@ export default {
   name: "App",
   data() {
     return {
-      //Задание №1
-      checked: true,
+      //Задание №1, №2
+      arrlanguages: [],
     };
   },
 
@@ -15,17 +15,32 @@ export default {
 </script>
 
 <template>
-  <h1>Упражнение №46</h1>
+  <h1>Упражнение №47</h1>
   <br />
 
   <!-- Задание №1 -->
   <h2>Задание №1</h2>
   <br />
 
-  <input type="checkbox" v-model="checked" />
-  <p v-if="checked">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, earum.
-  </p>
+  <input type="checkbox" v-model="arrlanguages" value="Русский" />
+  <p>Русский</p>
+
+  <input type="checkbox" v-model="arrlanguages" value="Английский" />
+  <p>Английский</p>
+
+  <input type="checkbox" v-model="arrlanguages" value="Казахский" />
+  <p>Казахский</p>
+
+  <input type="checkbox" v-model="arrlanguages" value="Татарский" />
+  <p>Татарский</p>
+
+  <!-- Задание №2 -->
+  <h2>Задание №2</h2>
+  <br />
+
+  <ul class="ul" v-for="elem in arrlanguages">
+    <li>{{ elem }}</li>
+  </ul>
 
   <main>
     <TheWelcome />
@@ -64,6 +79,7 @@ p {
   width: 70%;
   color: white;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 5px;
 }
 
 .ul {
