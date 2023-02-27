@@ -4,8 +4,6 @@ export default {
   data() {
     return {
       //Задание №1
-      isValid: true,
-      isDisabled: true,
     };
   },
 
@@ -16,14 +14,26 @@ export default {
 </script>
 
 <template>
-  <h1>Упражнение №41</h1>
+  <h1>Упражнение №42</h1>
   <br />
 
   <!-- Задание №1 -->
   <h2>Задание №1</h2>
   <br />
 
-  <p :class="{ active: isValid, valid: isDisabled }">
+  <p :style="{ color: 'green', backgroundColor: 'yellow' }">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit asperiores
+    dolores iure, rerum vero possimus pariatur provident, voluptatem earum,
+    neque hic! Cum magni sit perferendis assumenda ipsum. Quos, doloribus
+    distinctio!
+  </p>
+  <br />
+
+  <!-- Задание №2 -->
+  <h2>Задание №2</h2>
+  <br />
+
+  <p :style="{ fontStyle: 'italic', fontWeight: 'bold' }">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit asperiores
     dolores iure, rerum vero possimus pariatur provident, voluptatem earum,
     neque hic! Cum magni sit perferendis assumenda ipsum. Quos, doloribus
@@ -66,6 +76,7 @@ p {
   display: block;
   width: 70%;
   color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .ul {
@@ -78,21 +89,4 @@ a {
   font-size: 20px;
 }
 /* ---------------- */
-
-/* Задание №1 */
-.active {
-  font-size: 25px;
-  display: block;
-  width: 70%;
-  color: #00fa9a;
-}
-
-.valid {
-  color: whitesmoke;
-  font-size: 20px;
-  display: block;
-  width: 70%;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  margin-left: 20px;
-}
 </style>
