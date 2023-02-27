@@ -5,31 +5,52 @@ export default {
     return {
       //Задание №1
       obj: {
-        done: true,
-        selected: false,
+        hidden: true,
       },
     };
   },
 
   methods: {
-    // Задание №1
+    // Задание №2
+    show: function () {
+      this.obj.hidden = false;
+    },
+    // Задание №3
+    hide: function () {
+      this.obj.hidden = true;
+    },
+    // Задание №4
+    toggle: function () {
+      this.obj.hidden = !this.obj.hidden;
+    },
   },
 };
 </script>
 
 <template>
-  <h1>Упражнение №38</h1>
-  <br />
-
-  <h2>Объект с CSS классами</h2>
+  <h1>Упражнение №39</h1>
   <br />
 
   <!-- Задание №1 -->
+  <h2>Задание №1</h2>
+
   <p :class="obj">
-    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste, saepe qui
-    beatae culpa quas architecto sunt cum? Sed inventore praesentium minus.
-    Saepe consequuntur cumque, aperiam labore eaque maiores rem harum?
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit asperiores
+    dolores iure, rerum vero possimus pariatur provident, voluptatem earum,
+    neque hic! Cum magni sit perferendis assumenda ipsum. Quos, doloribus
+    distinctio!
   </p>
+  <br />
+
+  <h2>Задание №2</h2>
+  <button @click="show">Показать</button>
+
+  <h2>Задание №3</h2>
+  <button @click="hide">Скрыть</button>
+  <br />
+
+  <h2>Задание №4</h2>
+  <button @click="toggle">{{ obj.hidden ? "Показать" : "Скрыть" }}</button>
 
   <main>
     <TheWelcome />
@@ -62,36 +83,26 @@ h2 {
   color: #008080;
 }
 
-/* p {
+p {
   font-size: 25px;
   display: block;
   width: 70%;
   color: white;
-} */
+}
 
 .ul {
   color: #00bfff;
   font-size: 20px;
 }
-/* ---------------- */
+
 a {
   font-family: sans-serif;
   font-size: 20px;
 }
+/* ---------------- */
 
-.done {
-  color: whitesmoke;
-  font-size: 20px;
-  display: block;
-  width: 70%;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  margin-left: 20px;
-}
-
-.selected {
-  font-size: 30px;
-  display: block;
-  width: 70%;
-  color: #00fa9a;
+/* Задание №1 */
+p.hidden {
+  display: none;
 }
 </style>
