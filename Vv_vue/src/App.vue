@@ -4,43 +4,81 @@ export default {
   data() {
     return {
       //Задание №1, №2
-      arrlanguages: [],
+      language: "",
+      visible1: false,
+      visible2: false,
+      visible3: false,
     };
   },
 
   methods: {
-    //Задание №1
+    //Задание №1, №2
+    choice1() {
+      this.visible1 = true;
+      this.visible2 = false;
+      this.visible3 = false;
+    },
+
+    choice2() {
+      this.visible2 = true;
+      this.visible1 = false;
+      this.visible3 = false;
+    },
+
+    choice3() {
+      this.visible3 = true;
+      this.visible1 = false;
+      this.visible2 = false;
+    },
   },
 };
 </script>
 
 <template>
-  <h1>Упражнение №47</h1>
+  <h1>Упражнение №48</h1>
   <br />
 
   <!-- Задание №1 -->
   <h2>Задание №1</h2>
+
+  <p>Какой ваш родной язык?</p>
+  <input
+    name="radio"
+    type="radio"
+    v-model="language"
+    value="Русский"
+    @click="choice1"
+  />
+  <label for=""><span> Русский</span> </label>
   <br />
 
-  <input type="checkbox" v-model="arrlanguages" value="Русский" />
-  <p>Русский</p>
+  <input
+    name="radio"
+    type="radio"
+    v-model="language"
+    value="Английский"
+    @click="choice2"
+  />
+  <label for=""><span> Английский</span></label>
+  <br />
 
-  <input type="checkbox" v-model="arrlanguages" value="Английский" />
-  <p>Английский</p>
-
-  <input type="checkbox" v-model="arrlanguages" value="Казахский" />
-  <p>Казахский</p>
-
-  <input type="checkbox" v-model="arrlanguages" value="Татарский" />
-  <p>Татарский</p>
+  <input
+    name="radio"
+    type="radio"
+    v-model="language"
+    value="Казахский"
+    @click="choice3"
+  />
+  <label for=""><span> Казахский</span></label>
 
   <!-- Задание №2 -->
   <h2>Задание №2</h2>
-  <br />
 
-  <ul class="ul" v-for="elem in arrlanguages">
-    <li>{{ elem }}</li>
-  </ul>
+  <p v-if="visible1">Привет</p>
+  <p v-if="visible2">Hello</p>
+  <p v-if="visible3">ЖУМАЙСЫНБА</p>
+
+  <p>Ваш национальный язык: {{ language }}</p>
 
   <main>
     <TheWelcome />
@@ -98,5 +136,10 @@ a {
   text-align: center;
   font-size: 30px;
   margin: 10px;
+}
+
+span {
+  color: #00bfff;
+  font-size: 20px;
 }
 </style>
