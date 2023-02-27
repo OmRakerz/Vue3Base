@@ -4,6 +4,9 @@ export default {
   data() {
     return {
       //Задание №1
+      message:
+        "Hello, hello? Uh, I wanted to record a message for you to help you get settled in on your first night.",
+      num: 8,
     };
   },
 
@@ -14,32 +17,23 @@ export default {
 </script>
 
 <template>
-  <h1>Упражнение №42</h1>
+  <h1>Упражнение №43</h1>
   <br />
 
   <!-- Задание №1 -->
-  <h2>Задание №1</h2>
+  <h2>Задание №1, №2</h2>
   <br />
-
-  <p :style="{ color: 'green', backgroundColor: 'yellow' }">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit asperiores
-    dolores iure, rerum vero possimus pariatur provident, voluptatem earum,
-    neque hic! Cum magni sit perferendis assumenda ipsum. Quos, doloribus
-    distinctio!
-  </p>
+  <input v-model="message" />
   <br />
-
+  <br />
   <!-- Задание №2 -->
-  <h2>Задание №2</h2>
+  <p class="message">{{ message }}</p>
   <br />
 
-  <p :style="{ fontStyle: 'italic', fontWeight: 'bold' }">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit asperiores
-    dolores iure, rerum vero possimus pariatur provident, voluptatem earum,
-    neque hic! Cum magni sit perferendis assumenda ipsum. Quos, doloribus
-    distinctio!
-  </p>
-
+  <!-- Задание №3 -->
+  <h2>Задание №3</h2>
+  <input v-model="num" />
+  <p>Квадрат введённого выше числа {{ num }} равен: {{ num ** 2 }}</p>
   <main>
     <TheWelcome />
   </main>
@@ -89,4 +83,16 @@ a {
   font-size: 20px;
 }
 /* ---------------- */
+
+.message {
+  font-size: 25px;
+  display: block;
+  width: 70%;
+  color: #00fa9a;
+}
+
+input {
+  color: #00bfff;
+  font-size: 20px;
+}
 </style>
