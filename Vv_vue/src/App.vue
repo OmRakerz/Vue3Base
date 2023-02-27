@@ -4,6 +4,8 @@ export default {
   data() {
     return {
       //Задание №1
+      isValid: true,
+      isDisabled: true,
     };
   },
 
@@ -14,14 +16,14 @@ export default {
 </script>
 
 <template>
-  <h1>Упражнение №40</h1>
+  <h1>Упражнение №41</h1>
   <br />
 
   <!-- Задание №1 -->
   <h2>Задание №1</h2>
   <br />
 
-  <p :class="{ active: true, valid: false }">
+  <p :class="{ active: isValid, valid: isDisabled }">
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit asperiores
     dolores iure, rerum vero possimus pariatur provident, voluptatem earum,
     neque hic! Cum magni sit perferendis assumenda ipsum. Quos, doloribus
