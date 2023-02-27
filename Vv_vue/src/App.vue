@@ -4,96 +4,45 @@ export default {
   data() {
     return {
       //Задание №1
-      num1: 0,
-      square_num1: 0,
+      text1: "",
 
       //Задание №2
-      num2: 0,
-      num3: 0,
-      sum_num23: "",
-
-      //Задание №3
-      text1: 0,
-      text2: 0,
-      swapt1_t2: "Смена значений",
-
-      //Задание №4
-      fullName: "",
-      Name: "",
-      Surname: "",
-      Patronymic: "",
+      text2: "",
+      text_arr: "",
     };
   },
 
   methods: {
-    //Задание №1
-    square: function () {
-      this.square_num1 = this.num1 ** 2;
-    },
-
     //Задание №2
-    sum: function () {
-      this.sum_num23 = Number(this.num2) + Number(this.num3);
-    },
-
-    //Задание №3
-    swap: function () {
-      const x = this.text1;
-      this.text1 = this.text2;
-      this.text2 = x;
-    },
-
-    //Задание №4
-    split: function () {
-      this.Surname = this.fullName.split(" ")[0];
-      this.Name = this.fullName.split(" ")[1];
-      this.Patronymic = this.fullName.split(" ")[2];
+    split_text: function () {
+      this.text_arr = this.text2.split(" ");
     },
   },
 };
 </script>
 
 <template>
-  <h1>Упражнение №44</h1>
+  <h1>Упражнение №45</h1>
   <br />
 
   <!-- Задание №1 -->
   <h2>Задание №1</h2>
   <br />
-  <input type="num1" v-model="num1" />
-  <button @click="square">Square</button>
-  <p>Квадрат числа {{ num1 }} равен: {{ square_num1 }}</p>
+
+  <textarea v-model="text1"></textarea>
+  <p>{{ text1 }}</p>
+  <br />
 
   <!-- Задание №2 -->
   <h2>Задание №2</h2>
   <br />
 
-  <input type="num2" v-model="num2" />
-  <input type="num3" v-model="num3" />
-  <button @click="sum">Sum</button>
-  <br />
-  <p>Сложение чисел {{ num2 }} и {{ num3 }} равна: {{ sum_num23 }}</p>
-  <br />
+  <textarea v-model="text2"></textarea>
+  <button class="button" @click="split_text">Список</button>
 
-  <!-- Задание №3 -->
-  <h2>Задание №3</h2>
-  <br />
-  <input type="text" v-model="text1" />
-  <input type="text" v-model="text2" />
-  <button @click="swap">Swap</button>
-  <br />
-  <p>{{ swapt1_t2 }}</p>
-  <br />
-
-  <!-- Задание №4 -->
-  <h2>Задание №4</h2>
-  <br />
-
-  <input type="text" v-model="fullName" />
-  <button @click="split">Split ФИО</button>
-  <p>Фамилия: {{ Surname }}</p>
-  <p>Имя: {{ Name }}</p>
-  <p>Отчество: {{ Patronymic }}</p>
+  <ul class="ul">
+    <li v-for="elem in text_arr">{{ elem }}</li>
+  </ul>
 
   <main>
     <TheWelcome />
@@ -144,4 +93,11 @@ a {
   font-size: 20px;
 }
 /* ---------------- */
+
+.button {
+  color: black;
+  text-align: center;
+  font-size: 30px;
+  margin: 10px;
+}
 </style>
