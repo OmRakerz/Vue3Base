@@ -4,45 +4,28 @@ export default {
   data() {
     return {
       //Задание №1
-      text1: "",
-
-      //Задание №2
-      text2: "",
-      text_arr: "",
+      checked: true,
     };
   },
 
   methods: {
-    //Задание №2
-    split_text: function () {
-      this.text_arr = this.text2.split(" ");
-    },
+    //Задание №1
   },
 };
 </script>
 
 <template>
-  <h1>Упражнение №45</h1>
+  <h1>Упражнение №46</h1>
   <br />
 
   <!-- Задание №1 -->
   <h2>Задание №1</h2>
   <br />
 
-  <textarea v-model="text1"></textarea>
-  <p>{{ text1 }}</p>
-  <br />
-
-  <!-- Задание №2 -->
-  <h2>Задание №2</h2>
-  <br />
-
-  <textarea v-model="text2"></textarea>
-  <button class="button" @click="split_text">Список</button>
-
-  <ul class="ul">
-    <li v-for="elem in text_arr">{{ elem }}</li>
-  </ul>
+  <input type="checkbox" v-model="checked" />
+  <p v-if="checked">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, earum.
+  </p>
 
   <main>
     <TheWelcome />
