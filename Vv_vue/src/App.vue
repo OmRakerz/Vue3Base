@@ -19,14 +19,14 @@ export default {
 </script>
 
 <template>
-  <h1>Упражнение №58</h1>
+  <h1>Упражнение №59</h1>
   <br />
 
   <!-- Задание №1 -->
   <h2>Задание №1</h2>
   <br />
 
-  <Employee />
+  <Employee name="Valera" surname="Vladychin" age="19" />
 </template>
 
 <style>
