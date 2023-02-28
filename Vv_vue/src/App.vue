@@ -4,31 +4,66 @@ export default {
   data() {
     return {
       //Задание №1
-      items: ["a", "b", "c", "d", "e"],
+      users: [
+        {
+          id: 1,
+          name: "name1",
+          salary: 100,
+          age: 30,
+        },
+        {
+          id: 2,
+          name: "name2",
+          salary: 200,
+          age: 40,
+        },
+        {
+          id: 3,
+          name: "name3",
+          salary: 300,
+          age: 50,
+        },
+      ],
     };
   },
 
   methods: {
     //Задание №1
-    removeItem: function (index) {
-      this.items.splice(index, 1);
+    removeItem: function (id) {
+      this.users = this.users.filter((user) => {
+        return user.id !== id;
+      });
     },
   },
 };
 </script>
 
 <template>
-  <h1>Упражнение №54</h1>
+  <h1>Упражнение №55</h1>
   <br />
 
   <!-- Задание №1 -->
   <h2>Задание №1</h2>
+  <br />
 
-  <ul class="ul">
-    <li v-for="(item, index) in items" :key="index">
-      <button class="button" @click="removeItem(index)">{{ item }}</button>
-    </li>
-  </ul>
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Salary</th>
+      <th>Age</th>
+      <th>Remove</th>
+    </tr>
+    <tr v-for="user in users">
+      <td>{{ user.id }}</td>
+      <td>{{ user.name }}</td>
+      <td>{{ user.salary }}</td>
+      <td>{{ user.age }}</td>
+      <td>
+        <button class="button" @click="removeItem(user.id)">remove</button>
+      </td>
+    </tr>
+  </table>
 
   <main>
     <TheWelcome />
@@ -88,7 +123,7 @@ a {
   text-align: center;
   font-size: 20px;
   margin: 4px 0;
-  border-radius: 20%;
+  border-radius: 40px;
 }
 
 span {
@@ -100,5 +135,18 @@ span {
   color: black;
   font-size: 20px;
   margin: 10px;
+}
+
+table {
+  color: #4682b4;
+  border: 1px solid white;
+  margin: 10px;
+  font-size: 20px;
+}
+
+td,
+th {
+  border: 2px solid white;
+  padding: 5px;
 }
 </style>
