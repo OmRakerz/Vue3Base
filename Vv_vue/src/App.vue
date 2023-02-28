@@ -4,91 +4,37 @@ export default {
   data() {
     return {
       //Задание №1
-      users: [
-        {
-          id: 1,
-          name: "name1",
-          salary: 100,
-          age: 30,
-          isEdit: false,
-        },
-        {
-          id: 2,
-          name: "name2",
-          salary: 200,
-          age: 40,
-          isEdit: false,
-        },
-        {
-          id: 3,
-          name: "name3",
-          salary: 300,
-          age: 50,
-          isEdit: false,
-        },
-      ],
     };
   },
 
   methods: {
     //Задание №1
-    removeItem: function (id) {
-      this.users = this.users.filter((user) => {
-        return user.id !== id;
-      });
-    },
-
-    edit: function (user) {
-      user.isEdit = true;
-    },
-    save: function (user) {
-      user.isEdit = false;
-    },
   },
 };
 </script>
 
 <template>
-  <h1>Упражнение №56</h1>
+  <h1>Упражнение №57</h1>
+  <br />
   <br />
 
-  <!-- Задание №1 -->
-  <h2>Задание №1</h2>
+  <p>
+    Если мы посмотрим на какой-нибудь сайт, то можем выделить на нем некоторые
+    блоки: хедер, контент, сайдбар, футер.
+  </p>
+  <br />
+  <p>
+    При создании сайта на Vue мы также можем использовать такие независимые
+    блоки. Они позволят нам лучше организовать наш код и упростят его дальнейшую
+    поддержку.
+  </p>
   <br />
 
-  <table>
-    <tr>
-      <th>Id</th>
-      <th>Name</th>
-      <th>Salary</th>
-      <th>Age</th>
-      <th>Remove</th>
-      <th>Edit</th>
-    </tr>
-    <tr v-for="user in users">
-      <template v-if="!user.isEdit">
-        <td>{{ user.id }}</td>
-        <td>{{ user.name }}</td>
-        <td>{{ user.salary }}</td>
-        <td>{{ user.age }}</td>
-
-        <td>
-          <button class="button" @click="removeItem(user.id)">remove</button>
-        </td>
-        <td><button class="button" @click="edit(user)">edit</button></td>
-      </template>
-
-      <template v-else>
-        <td><input class="input" v-model="user.id" /></td>
-        <td><input class="input" v-model="user.name" /></td>
-        <td><input class="input" v-model="user.salary" /></td>
-        <td><input class="input" v-model="user.age" /></td>
-
-        <td><button class="button" @click="save(user)">save</button></td>
-      </template>
-    </tr>
-  </table>
-
+  <p>
+    Во Vue такие блоки называются <u> <i>компонентами</i> </u>. В крупных
+    приложениях разделение на компоненты становится обязательным условием для
+    сохранения управляемости процесса разработки.
+  </p>
   <main>
     <TheWelcome />
   </main>
@@ -124,7 +70,7 @@ h2 {
 p {
   font-size: 25px;
   display: block;
-  width: 70%;
+  width: 80%;
   color: white;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 10px;
