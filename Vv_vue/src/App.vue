@@ -3,65 +3,45 @@ export default {
   name: "App",
   data() {
     return {
-      //Задание №1, №2, №3
-      text: "",
-      enterPress: "",
-      ctrlPress: "",
-      mouse: "",
+      //Задание №1, №2
+      newItem: "",
+      items: ["a", "b", "c", "d", "e"],
     };
   },
 
   methods: {
-    //Задание №1, №2, №3
-    submit: function () {
-      this.enterPress = this.text;
+    //Задание №1
+    addFirstItem: function () {
+      this.items.unshift(this.newItem);
     },
-
-    ctrl: function () {
-      this.ctrlPress = "Вы нажали на ссылку с зажатым ctrl";
-    },
-
-    left: function () {
-      this.mouse = "left";
-    },
-
-    right: function () {
-      this.mouse = "right";
-    },
-
-    middle: function () {
-      this.mouse = "middle";
+    //Задание №2
+    addlastItem: function () {
+      this.items.push(this.newItem);
     },
   },
 };
 </script>
 
 <template>
-  <h1>Упражнение №52</h1>
+  <h1>Упражнение №53</h1>
   <br />
 
   <!-- Задание №1 -->
   <h2>Задание №1</h2>
+  <br />
 
-  <p>Введите текст, а затем нажмите Enter</p>
-  <input class="input" v-on:keypress.enter="submit" v-model="text" />
-  <p>{{ enterPress }}</p>
+  <ul class="ul">
+    <li v-for="(item, index) in items" :key="index">
+      {{ item }}
+    </li>
+  </ul>
 
   <!-- Задание №2 -->
   <h2>Задание №2</h2>
 
-  <p>Нажмите на ссылку, зажав ctrl</p>
-  <a href="#" @click.ctrl="ctrl">link</a>
-  <p>{{ ctrlPress }}</p>
-
-  <!-- Задание №3 -->
-  <h2>Задание №3</h2>
-
-  <p>Нажмите на ссылку левой, правой, а также средней кнопкой мыши</p>
-  <a href="#" @click.left="left" @click.right="right" @click.middle="middle"
-    >link</a
-  >
-  <p>{{ mouse }}</p>
+  <input class="input" v-model="newItem" />
+  <button class="button" @click="addFirstItem">add first</button>
+  <button class="button" @click="addlastItem">add last</button>
 
   <main>
     <TheWelcome />
@@ -119,7 +99,7 @@ a {
 .button {
   color: #4682b4;
   text-align: center;
-  font-size: 15px;
+  font-size: 20px;
   margin: 10px;
 }
 
