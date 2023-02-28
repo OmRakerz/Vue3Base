@@ -10,18 +10,21 @@ export default {
           name: "name1",
           salary: 100,
           age: 30,
+          isEdit: false,
         },
         {
           id: 2,
           name: "name2",
           salary: 200,
           age: 40,
+          isEdit: false,
         },
         {
           id: 3,
           name: "name3",
           salary: 300,
           age: 50,
+          isEdit: false,
         },
       ],
     };
@@ -34,12 +37,19 @@ export default {
         return user.id !== id;
       });
     },
+
+    edit: function (user) {
+      user.isEdit = true;
+    },
+    save: function (user) {
+      user.isEdit = false;
+    },
   },
 };
 </script>
 
 <template>
-  <h1>Упражнение №55</h1>
+  <h1>Упражнение №56</h1>
   <br />
 
   <!-- Задание №1 -->
@@ -53,15 +63,29 @@ export default {
       <th>Salary</th>
       <th>Age</th>
       <th>Remove</th>
+      <th>Edit</th>
     </tr>
     <tr v-for="user in users">
-      <td>{{ user.id }}</td>
-      <td>{{ user.name }}</td>
-      <td>{{ user.salary }}</td>
-      <td>{{ user.age }}</td>
-      <td>
-        <button class="button" @click="removeItem(user.id)">remove</button>
-      </td>
+      <template v-if="!user.isEdit">
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.salary }}</td>
+        <td>{{ user.age }}</td>
+
+        <td>
+          <button class="button" @click="removeItem(user.id)">remove</button>
+        </td>
+        <td><button class="button" @click="edit(user)">edit</button></td>
+      </template>
+
+      <template v-else>
+        <td><input class="input" v-model="user.id" /></td>
+        <td><input class="input" v-model="user.name" /></td>
+        <td><input class="input" v-model="user.salary" /></td>
+        <td><input class="input" v-model="user.age" /></td>
+
+        <td><button class="button" @click="save(user)">save</button></td>
+      </template>
     </tr>
   </table>
 
@@ -132,21 +156,24 @@ span {
 }
 
 .input {
-  color: black;
+  color: #4682b4;
+
   font-size: 20px;
-  margin: 10px;
+  text-align: center;
+  border-radius: 40px;
+  width: 100px;
 }
 
 table {
-  color: #4682b4;
+  color: aqua;
   border: 1px solid white;
   margin: 10px;
   font-size: 20px;
+  text-align: center;
 }
 
 td,
 th {
-  border: 2px solid white;
   padding: 5px;
 }
 </style>
