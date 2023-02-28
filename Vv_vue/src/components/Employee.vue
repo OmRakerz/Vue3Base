@@ -1,6 +1,6 @@
 <script>
 export default {
-  props: ["name", "surname", "age"],
+  props: ["arg"],
 
   data() {
     return {
@@ -17,9 +17,9 @@ export default {
 <template>
   <!-- Задание №1 -->
 
-  <p>{{ name }}</p>
-  <p>{{ surname }}</p>
-  <p>{{ age }}</p>
+  <ul class="ul">
+    <li v-for="elem in arg">{{ elem }}</li>
+  </ul>
 </template>
 
 <style></style>
