@@ -3,45 +3,32 @@ export default {
   name: "App",
   data() {
     return {
-      //Задание №1, №2
-      newItem: "",
+      //Задание №1
       items: ["a", "b", "c", "d", "e"],
     };
   },
 
   methods: {
     //Задание №1
-    addFirstItem: function () {
-      this.items.unshift(this.newItem);
-    },
-    //Задание №2
-    addlastItem: function () {
-      this.items.push(this.newItem);
+    removeItem: function (index) {
+      this.items.splice(index, 1);
     },
   },
 };
 </script>
 
 <template>
-  <h1>Упражнение №53</h1>
+  <h1>Упражнение №54</h1>
   <br />
 
   <!-- Задание №1 -->
   <h2>Задание №1</h2>
-  <br />
 
   <ul class="ul">
     <li v-for="(item, index) in items" :key="index">
-      {{ item }}
+      <button class="button" @click="removeItem(index)">{{ item }}</button>
     </li>
   </ul>
-
-  <!-- Задание №2 -->
-  <h2>Задание №2</h2>
-
-  <input class="input" v-model="newItem" />
-  <button class="button" @click="addFirstItem">add first</button>
-  <button class="button" @click="addlastItem">add last</button>
 
   <main>
     <TheWelcome />
@@ -100,7 +87,8 @@ a {
   color: #4682b4;
   text-align: center;
   font-size: 20px;
-  margin: 10px;
+  margin: 4px 0;
+  border-radius: 20%;
 }
 
 span {
