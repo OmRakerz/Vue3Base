@@ -1,6 +1,6 @@
 <script>
 export default {
-  props: ["name", "salary", "age"],
+  props: { name: String, salary: String, age: Number },
 
   data() {
     return {
@@ -17,7 +17,7 @@ export default {
 <template>
   <!-- Задание №1 -->
   <p>Имя: {{ name }}</p>
-  <p>Зарплата: {{ salary }}</p>
+  <p>Зарплата: {{ salary }}₽</p>
   <p>Возраст: {{ age }}</p>
 </template>
 

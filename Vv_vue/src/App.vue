@@ -10,7 +10,7 @@ export default {
     return {
       //Задание №1
       name: "Valera",
-      salary: "1500₽",
+      salary: "1500",
       age: "19",
     };
   },
@@ -22,7 +22,7 @@ export default {
 </script>
 
 <template>
-  <h1>Упражнение №61</h1>
+  <h1>Упражнение №62</h1>
   <br />
 
   <!-- Задание №1 -->
