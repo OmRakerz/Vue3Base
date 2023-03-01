@@ -1,8 +1,10 @@
 <script>
 import Employee from "./components/Employee.vue";
+import AddUser from "./components/AddUser.vue";
 export default {
   components: {
     Employee,
+    AddUser,
   },
 
   name: "App",
@@ -31,35 +33,25 @@ export default {
 
   methods: {
     //Задание №1
-    change(id, name, surn) {
-      this.users = this.users.map((user) => {
-        if (user.id === id) {
-          user.name = name;
-          user.surn = surn;
-        }
-        return user;
-      });
+    add(name, surn) {
+      let id = this.users.length + 1;
+      this.users.push({ id, name, surn });
+      console.log(this.users);
     },
   },
 };
 </script>
 
 <template>
-  <h1>Упражнение №69</h1>
+  <h1>Упражнение №70</h1>
   <br />
 
   <!-- Задание №1 -->
   <h2>Задание №1</h2>
-  <br />
 
-  <Employee
-    v-for="user in users"
-    :id="user.id"
-    :name="user.name"
-    :surn="user.surn"
-    :key="user.id"
-    @change="change"
-  />
+  <p>Форма для добавления нового работника:</p>
+
+  <AddUser @add="add" />
 </template>
 
 <style>
@@ -113,8 +105,8 @@ a {
 .button {
   color: #4682b4;
   text-align: center;
-  font-size: 25px;
-  margin: 4px 10px;
+  font-size: 23px;
+  margin: 5px 10px;
   border-radius: 40px;
 }
 
@@ -125,7 +117,7 @@ span {
 
 .input {
   color: #4682b4;
-
+  margin: 0 10px;
   font-size: 20px;
   text-align: center;
   border-radius: 40px;
