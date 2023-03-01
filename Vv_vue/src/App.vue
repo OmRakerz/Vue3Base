@@ -14,12 +14,7 @@ export default {
 
   methods: {
     //Задание №1
-    func1(name) {
-      console.log(name);
-    },
-
-    //Задание №2
-    func2(name, salary) {
+    func(name, salary) {
       console.log(name, salary);
     },
   },
@@ -27,14 +22,14 @@ export default {
 </script>
 
 <template>
-  <h1>Упражнение №66</h1>
+  <h1>Упражнение №67</h1>
   <br />
 
-  <!-- Задание №1, №2 -->
-  <h2>Задание №1, №2</h2>
+  <!-- Задание №1 -->
+  <h2>Задание №1</h2>
   <br />
 
-  <Employee @show1="func1" @show2="func2" />
+  <Employee @show="func" />
 </template>
 
 <style>

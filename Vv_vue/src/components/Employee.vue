@@ -1,6 +1,6 @@
 <script>
 export default {
-  props: { show1: String, show2: String },
+  props: {},
 
   data() {
     return {
@@ -10,21 +10,15 @@ export default {
 
   methods: {
     //Задание №1
-    func1: function () {
-      this.$emit("show1", "Valera");
-    },
-
-    func2: function () {
-      this.$emit("show2", "Evgeniy", "5000₽");
-    },
   },
 };
 </script>
 
 <template>
   <!-- Задание №1 -->
-  <button class="button" @click="func1">Имя</button>
-  <button class="button" @click="func2">Имя/ЗП</button>
+  <button class="button" @click="$emit('show', 'Valera', '5000₽')">
+    Имя/ЗП
+  </button>
 </template>
 
 <style></style>
