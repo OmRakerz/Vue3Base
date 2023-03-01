@@ -9,9 +9,26 @@ export default {
   data() {
     return {
       //Задание №1
-      name: "Valera",
-      salary: "1500",
-      age: "19",
+      users: [
+        {
+          id: 1,
+          name: "name1",
+          salary: 100,
+          age: 30,
+        },
+        {
+          id: 2,
+          name: "name2",
+          salary: 200,
+          age: 40,
+        },
+        {
+          id: 3,
+          name: "name3",
+          salary: 300,
+          age: 50,
+        },
+      ],
     };
   },
 
@@ -22,13 +39,20 @@ export default {
 </script>
 
 <template>
-  <h1>Упражнение №62</h1>
+  <h1>Упражнение №63</h1>
   <br />
 
   <!-- Задание №1 -->
   <h2>Задание №1</h2>
 
-  <Employee :name="name" :salary="salary" :age="age" />
+  <Employee
+    v-for="user in users"
+    :name="user.name"
+    :salary="user.salary"
+    :id="user.id"
+    :age="user.age"
+    :key="user.id"
+  />
 </template>
 
 <style>
