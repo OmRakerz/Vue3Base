@@ -10,12 +10,12 @@ export default {
 
   methods: {
     //Задание №1
-    showApp1: function () {
-      this.$emit("show1", "xxx");
+    func1: function () {
+      this.$emit("show1", "Valera");
     },
 
-    showApp2: function () {
-      this.$emit("show2", "yyy");
+    func2: function () {
+      this.$emit("show2", "Evgeniy", "5000₽");
     },
   },
 };
@@ -23,8 +23,8 @@ export default {
 
 <template>
   <!-- Задание №1 -->
-  <button class="button" @click="showApp1">One func</button>
-  <button class="button" @click="showApp2">Two func</button>
+  <button class="button" @click="func1">Имя</button>
+  <button class="button" @click="func2">Имя/ЗП</button>
 </template>
 
 <style></style>

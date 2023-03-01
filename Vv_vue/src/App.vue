@@ -14,26 +14,27 @@ export default {
 
   methods: {
     //Задание №1
-    one: function (str1) {
-      alert(str1);
+    func1(name) {
+      console.log(name);
     },
 
-    two: function (str2) {
-      alert(str2);
+    //Задание №2
+    func2(name, salary) {
+      console.log(name, salary);
     },
   },
 };
 </script>
 
 <template>
-  <h1>Упражнение №65</h1>
+  <h1>Упражнение №66</h1>
   <br />
 
-  <!-- Задание №1 -->
-  <h2>Задание №1</h2>
+  <!-- Задание №1, №2 -->
+  <h2>Задание №1, №2</h2>
   <br />
 
-  <Employee @show1="one" @show2="two" />
+  <Employee @show1="func1" @show2="func2" />
 </template>
 
 <style>
@@ -87,8 +88,8 @@ a {
 .button {
   color: #4682b4;
   text-align: center;
-  font-size: 20px;
-  margin: 4px 5px;
+  font-size: 25px;
+  margin: 4px 10px;
   border-radius: 40px;
 }
 
