@@ -9,6 +9,9 @@ export default {
   data() {
     return {
       //Задание №1
+      name: "Valera",
+      salary: "1500₽",
+      age: "19",
     };
   },
 
@@ -19,14 +22,13 @@ export default {
 </script>
 
 <template>
-  <h1>Упражнение №60</h1>
+  <h1>Упражнение №61</h1>
   <br />
 
   <!-- Задание №1 -->
   <h2>Задание №1</h2>
-  <br />
 
-  <Employee :arg="{ a: 1, b: 2, c: 3 }" />
+  <Employee :name="name" :salary="salary" :age="age" />
 </template>
 
 <style>
