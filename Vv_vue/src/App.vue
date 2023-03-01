@@ -9,27 +9,53 @@ export default {
   data() {
     return {
       //Задание №1
+      users: [
+        {
+          id: 1,
+          name: "name1",
+          surn: "surn1",
+        },
+        {
+          id: 2,
+          name: "name2",
+          surn: "surn2",
+        },
+        {
+          id: 3,
+          name: "name3",
+          surn: "surn3",
+        },
+      ],
     };
   },
 
   methods: {
     //Задание №1
-    func(name, salary) {
-      console.log(name, salary);
+    remove(id) {
+      this.users = this.users.filter((user) => {
+        return user.id !== id;
+      });
     },
   },
 };
 </script>
 
 <template>
-  <h1>Упражнение №67</h1>
+  <h1>Упражнение №68</h1>
   <br />
 
   <!-- Задание №1 -->
   <h2>Задание №1</h2>
   <br />
 
-  <Employee @show="func" />
+  <Employee
+    v-for="user in users"
+    :id="user.id"
+    :name="user.name"
+    :surn="user.surn"
+    @remove="remove"
+    :key="user.id"
+  />
 </template>
 
 <style>

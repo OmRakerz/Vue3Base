@@ -1,6 +1,7 @@
 <script>
 export default {
-  props: {},
+  props: { id: Number, name: String, surn: String },
+  emits: ["remove"],
 
   data() {
     return {
@@ -16,9 +17,14 @@ export default {
 
 <template>
   <!-- Задание №1 -->
-  <button class="button" @click="$emit('show', 'Valera', '5000₽')">
-    Имя/ЗП
-  </button>
+  <p>Id: {{ id }}</p>
+  <p>Имя: {{ name }}</p>
+
+  <p>Фамилия: {{ surn }}</p>
+
+  <button class="button" @click="$emit('remove', id)">remove</button>
+  <br />
+  <br />
 </template>
 
 <style></style>
